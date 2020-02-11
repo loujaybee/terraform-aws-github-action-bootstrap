@@ -7,13 +7,30 @@ For full details, read this article.
 
 ## Setup Steps
 
+Pre-requisites: 
+* A setup AWS account
+* Git installed on your machine
+
+### Step 1: Create the backend bucket
+
 1. Clone the repo `git@github.com:loujaybee/terraform-aws-github-action-bootstrap.git`
-2. [Install Terraform](https://www.terraform.io/downloads.html)
-3. Set your bash variables locally `export AWS_ACCESS_KEY_ID=[your-key]` and `export AWS_SECRET_ACCESS_KEY=[your-key]`
-4. Initialise Terraform `terraform init`
-5. Update `variables.tf` and set `example-terraform-project-name` to be the name of your project
+2. Install the [Terraform](https://www.terraform.io/downloads.html) binary
+3. Set your bash variables locally 
+    * `export AWS_ACCESS_KEY_ID=[your-key]` 
+    * `export AWS_SECRET_ACCESS_KEY=[your-key]`
+4. `terraform init` to initialise Terraform 
+5. Update the `main.tf` file and set `bucket` property of the backend and s3 resource blocks
 6. Execute `terraform apply` (type `yes`)
-7. Uncomment the backend configuration
-8. Execute `terraform init` (type `yes` to move your state)
-3. Set your AWS `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` as repo secrets @ github.com/[your-username]/[your-repo]/settings/secrets/new
-4. Push to Github
+
+### Step 2: Run Terrafrom on Github Actions
+
+7. Uncomment the backend configuration in `main.tf` 
+8. update backend `bucket` property to be your created S3 bucket.
+9. Execute `terraform init` (type `yes` to move your state)
+10. Set your AWS `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` as repo secrets @ github.com/[your-username]/[your-repo]/settings/secrets/new
+11. `git add .` and `git commit -m "First commit"` to commit any changes
+11. `git push` to push to github
+
+## Having Problems?
+
+[Raise an issue](https://github.com/loujaybee/terraform-aws-github-action-bootstrap/issues)
