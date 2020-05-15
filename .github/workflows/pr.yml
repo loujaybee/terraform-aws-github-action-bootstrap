@@ -8,16 +8,16 @@ on:
 
 jobs:
   Terraform:
-    name: Terraform Plan & Apply
+    name: Terraform Plan
     runs-on: ubuntu-latest
     steps:
 
     - name: Checkout Repo
       uses: actions/checkout@v2
-
+    
     - name: Terraform Setup
       uses: hashicorp/setup-terraform@v1
-      
+
     - name: Terraform Init
       run: terraform init
       env:
@@ -25,7 +25,7 @@ jobs:
         TF_ACTION_WORKING_DIR: '.'
         AWS_ACCESS_KEY_ID:  ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      
+
     - name: Terraform Validate
       run: terraform validate
 
