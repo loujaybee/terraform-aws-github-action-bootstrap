@@ -1,9 +1,9 @@
 
-This project allows you to bootstrap a Terraform project on AWS using Github Actions.
+# Terraform Github Actions Bootstrap
 
-The purpose of the project is to make a simple sandbox for experimenting with Terraform resources using a CI pipeline.
+Allows you to bootstrap a Terraform project on AWS using Github Actions. The purpose of the project is to make a simple sandbox for experimenting with Terraform resources using a CI pipeline.
 
-For full details, read this article.
+For the companion article, check out: https://www.thedevcoach.co.uk/setup-terraform-aws-github-actions/
 
 ## Setup Steps
 
