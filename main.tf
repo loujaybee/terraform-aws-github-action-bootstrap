@@ -3,16 +3,16 @@ provider "aws" {
   region  = "eu-central-1"
 }
 
-# terraform {
-#   backend "s3" {
-#     bucket = "example-terraform-project-name-bootstrap-terraform-state"
-#     key    = "default-infrastructure"
-#     region = "eu-central-1"
-#   }
-# }
+terraform {
+  backend "s3" {
+    bucket = "example-terraform-project-name-bootstrap-terraform-state"
+    key    = "default-infrastructure"
+    region = "eu-central-1"
+  }
+}
 
-resource "aws_s3_bucket" "terraform_state" {
-  bucket = "example-terraform-project-name-bootstrap-terraform-state"
+resource "aws_s3_bucket" "terraform_state_2" {
+  bucket = "example-terraform-project-name-bootstrap-terraform-state-2"
 
   versioning {
     enabled = true
