@@ -1,4 +1,4 @@
-data "aws_availability_zones" "available" {}
+/* data "aws_availability_zones" "available" {}
 resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
   tags = merge(
@@ -21,9 +21,9 @@ resource "aws_subnet" "main" {
 resource "aws_cloud9_environment_ec2" "default" {
   name                        = var.name
   instance_type               = var.instance_type
-  image_id                 = var.instance_id
+  image_id                    = var.instance_id
   connection_type             = var.connection_type
   automatic_stop_time_minutes = var.automatic_stop_time_minutes
   description                 = var.description
   subnet_id                   = aws_subnet.main.*.id[0]
-}
+} */
