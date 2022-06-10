@@ -14,18 +14,19 @@ resource "aws_s3_bucket_versioning" "versioning" {
   }
 }
 
-resource "aws_s3_bucket_server_side_encryption_configuration" "encryption" {
+/* resource "aws_s3_bucket_server_side_encryption_configuration" "encryption" {
   bucket = aws_s3_bucket.terraform_state.bucket
 
   rule {
     apply_server_side_encryption_by_default {
-      /* kms_master_key_id = aws_kms_key.mykey.arn */
+
       sse_algorithm     = "AES256"
     }
   }
 }
+*/
 
-resource "aws_s3_bucket_object_lock_configuration" "object_lock" {
+/* resource "aws_s3_bucket_object_lock_configuration" "object_lock" {
   bucket = aws_s3_bucket.terraform_state.bucket
 
   rule {
@@ -34,7 +35,7 @@ resource "aws_s3_bucket_object_lock_configuration" "object_lock" {
       days = 5
     }
   }
-}
+} */
 
 #^ dynamo db
 resource "aws_dynamodb_table" "terraform-lock" {
